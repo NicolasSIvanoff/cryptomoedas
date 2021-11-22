@@ -1,0 +1,22 @@
+.card-img-top {
+  width: 100px;
+  height: 100px;
+}
+.card {
+  padding: 10px;
+}
+.sellclass {
+  color: rgb(219, 5, 51);
+}
+.buyclass {
+  color: rgb(12, 187, 6);
+}
+.fixa-topo {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+  padding: 4rem;
+  border: 1px solid #ccc;
+}

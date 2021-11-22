@@ -1,0 +1,158 @@
+<div class="card-group">
+  <div class="card">
+    <h5 class="card-title">Bitcoin</h5>
+    <img src="../../assets/img/btc.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <ul>
+        <li>
+          <p class="card-text">
+            horário:
+            {{ btcData && btcData.ticker.date * 1000 | date: 'HH:mm:ss' }}
+          </p>
+          <!-- {{valor | number:'4.1-5'}} -->
+        </li>
+        <li>
+          <p
+            class="card-text"
+            [ngClass]="{
+              sellclass: btcData?.ticker?.sell === 'step1',
+              my_class2: btcData?.ticker?.sell === 'step2'
+            }"
+          >
+            venda: {{ btcData?.ticker?.sell | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            compra: {{ btcData?.ticker?.buy | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            última: {{ btcData?.ticker?.last | currency: 'BRL' }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h5 class="card-title">Etherium</h5>
+    <img src="../../assets/img/eth.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <ul>
+        <li>
+          <p class="card-text">
+            horário:
+            {{ ethData && ethData.ticker.date * 1000 | date: 'HH:mm:ss' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            venda: {{ ethData?.ticker?.sell | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            compra: {{ ethData?.ticker?.buy | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            última: {{ ethData?.ticker?.last | currency: 'BRL' }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h5 class="card-title">AXS</h5>
+    <img src="../../assets/img/AXS.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <ul>
+        <li>
+          <p class="card-text">
+            horário:
+            {{ btcData && btcData.ticker.date * 1000 | date: 'HH:mm:ss' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            venda:
+            {{ axsData?.ticker?.sell | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            compra: {{ axsData?.ticker?.buy | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            última: {{ axsData?.ticker?.last | currency: 'BRL' }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card">
+    <h5 class="card-title">ADA</h5>
+    <img src="../../assets/img/ADA.png" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <ul>
+        <li>
+          <p class="card-text">
+            horário:
+            {{ btcData && btcData.ticker.date * 1000 | date: 'HH:mm:ss' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            venda: {{ adaData?.ticker?.sell | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            compra: {{ adaData?.ticker?.buy | currency: 'BRL' }}
+          </p>
+        </li>
+        <li>
+          <p class="card-text">
+            última: {{ adaData?.ticker?.last | currency: 'BRL' }}
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<input #inputContador style="width: 25%" type="text" />
+<button (click)="criptoInit(inputContador.value)">Adicionar Cripto</button>
+
+<div class="card">
+  <h5 class="card-title">{{ coinName }}</h5>
+  <div class="card-body">
+    <ul>
+      <li>
+        <p class="card-text">
+          horário:
+          {{ coin && coin.ticker.date * 1000 | date: 'HH:mm:ss' }}
+        </p>
+      </li>
+      <li>
+        <p class="card-text">
+          venda: {{ coin && coin.ticker?.sell | currency: 'BRL' }}
+        </p>
+      </li>
+      <li>
+        <p class="card-text">
+          compra: {{ coin && coin.ticker?.buy | currency: 'BRL' }}
+        </p>
+      </li>
+      <li>
+        <p class="card-text">
+          última: {{ coin && coin.ticker?.last | currency: 'BRL' }}
+        </p>
+      </li>
+    </ul>
+  </div>
+</div>

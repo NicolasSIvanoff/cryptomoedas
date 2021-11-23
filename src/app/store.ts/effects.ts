@@ -19,7 +19,8 @@ export class CoinEffects {
             console.log('resposta http', ticker);
             return cripto.setCriptoSuccess({ coin: ticker });
           }),
-          catchError((error: HttpErrorResponse) => {
+          catchError(error => {
+            console.log(error);
             return of(
               cripto.setCriptoError({
                 error: ErrorBuilder.genericError(error),
